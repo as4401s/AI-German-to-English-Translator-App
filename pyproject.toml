@@ -1,0 +1,18 @@
+[project]
+name = "teams-live-translate"
+version = "1.0.0"
+description = "Real-time on-screen translation - fully standalone"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pillow>=12.0.0",
+    "pyside6>=6.10.0",
+    "pytesseract>=0.3.13",
+    "transformers>=4.40.0",
+    "torch>=2.0.0",
+    "sentencepiece>=0.1.99",
+    "sacremoses>=0.1.1",
+    "pyinstaller>=6.0.0",
+    "llama-cpp-python>=0.2.0",
+    "mss>=9.0.0",
+]

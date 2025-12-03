@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Model files (too large for git)
+*.gguf
+models/opus-mt-de-en/*.safetensors
+models/opus-mt-de-en/*.spm
+
+# Test images
+*.png
+*.jpg
+*.jpeg
+!my_app_icon.icns
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
