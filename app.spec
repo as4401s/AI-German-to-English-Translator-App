@@ -50,7 +50,7 @@ a = Analysis(
         'sacremoses',
         'safetensors',
         'huggingface_hub',
-        'transformers.models.marian.*',
+        'transformers.models.marian',
         # Other dependencies
         'mss',
     ],
@@ -76,7 +76,7 @@ exe = EXE(
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    console=True,  # Enable console to see errors when double-clicking
+    console=False,  # GUI app; logs go to ~/Library/Logs/LiveTranslate/app.log
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
@@ -108,5 +108,6 @@ app = BUNDLE(
         'CFBundleVersion': '1.0.0',
         'NSHighResolutionCapable': True,
         'LSMinimumSystemVersion': '10.13.0',
+        'NSLocalNetworkUsageDescription': 'Connects to Ollama on this Mac (127.0.0.1) when you choose a Gemma model.',
     },
 )

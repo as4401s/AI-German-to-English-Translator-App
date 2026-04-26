@@ -129,24 +129,13 @@ class RegionGrabber:
                 "height": self.box.h
             }
             
-            # Grab the screen shot
             sct_img = self.sct.grab(monitor)
-            
-            # Convert to QImage
-            # mss returns BGRA, we need to convert to Format_RGB32 or Format_ARGB32
-            # QImage(bytes, width, height, bytes_per_line, format)
-            img = QImage(sct_img.raw, sct_img.width, sct_img.height, QImage.Format_RGB32)
-            
-            # mss returns BGRA, QImage.Format_RGB32 expects ARGB (in little endian) or something similar
-            # Actually mss raw is BGRA. 
-            # QImage.Format_RGB32 is 0xffRRGGBB.
-            # We might need to swap channels if colors look wrong.
-            # Let's try Format_ARGB32 or Format_RGBA8888
-            
-            # Create QImage from the raw data
-            # sct_img.raw is BGRA
-            img = QImage(sct_img.raw, sct_img.width, sct_img.height, QImage.Format_ARGB32)
-            
+            img = QImage(
+                sct_img.raw,
+                sct_img.width,
+                sct_img.height,
+                QImage.Format_ARGB32,
+            ).copy()
             if img.isNull():
                 return QImage()
                 
